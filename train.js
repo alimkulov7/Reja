@@ -1,15 +1,48 @@
+//          A-TASK
+
+const list = ["Corolla", "Civic", "Mustang", "Corvette", "Model 3", "3 Series"];
+
+
+
+
+/* function countLetter  (a,n) {
+    const count = n.split(a).length-1;
+    return count ;
+}; */
+
+for (const index in list) {
+    function countLetter  (a,index) {
+        const count = list[index].toLowerCase().split(a).length-1;
+
+        console.log(`Total number of letter "${a}" letter in (${list[index]}) is ${count} ! `);
+        
+    };    
+}
+
+
+countLetter("l",0);
+countLetter("i",1);
+countLetter("m",2);
+countLetter("t",3);
+countLetter("s",5);
+
+
+
+
+
+
 //CALL-BACK FUNCIONS 21
 
-console.log("Jack Ma maslahatlari");
+//console.log("Jack Ma maslahatlari");
 
-const list = [
+//const list = [
   "yaxshi talaba bo'ling", // 0–20
   "tog'ri boshliq tanlang va koproq hato qiling", // 20–30
   "uzingizga ishlandingiz boshing", // 30–40
   "siz kuchli bolgan narsalarni qiling", // 40–50
   "yoshlarga investitsiya qiling", // 50–60
   "endi dam oling, foydasi yoq endi" // 60
-];
+//];
 
 /* function maslahatBering (a, callback) {
     setTimeout(function () {
@@ -82,7 +115,7 @@ run();
  */
 
 //CALLBACK & SET INTERVAL
-
+/* 
 function maslahatBering (a, callback) {
     
         if (typeof a !== "number" ) callback("insert a number",null);
@@ -106,4 +139,4 @@ maslahatBering (74, (err, data) => {
         console.log('JAVOB: ',data);
     }
 });
-console.log("Passed here 2");
+console.log("Passed here 2"); */
