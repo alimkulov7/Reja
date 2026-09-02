@@ -21,43 +21,118 @@
             margin: 0 auto;
         }
 
+        .reja-list {
+            width: 73%;
+            margin: 20px auto 0;
+        }
+
+        .reja-item {
+            background: #c5e9ef;
+            margin-bottom: 5px;
+            padding: 8px 10px;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+        .reja-text {
+            flex: 1;
+        }
+
         .clear-button {
-            margin-left: 15%;
+            width: 73%;
+            margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- TITLE -->
+
     <h1 class="text-center fw-normal mt-1 mb-2">
         REJA VA MAQSADLAR
     </h1>
 
-    <div class="search-box ">
-         <form id="create-form" action="/create-item" method="POST">
+
+    <!-- NEW REJA FORM -->
+
+    <div class="search-box">
+
+        <form id="create-form" action="/create-item" method="POST">
+
             <div class="bg-light rounded p-2 d-flex gap-2 align-items-center">
-            
-            <input
-                type="text"
-                name="item"
-                class="form-control form-control-sm"
-                placeholder="tekshirish"
-            >
 
-            <button class="btn btn-primary btn-sm rounded-pill text-nowrap">
-                Yangi Reja Qo`shish
-            </button>
+                <input
+                    type="text"
+                    name="reja"
+                    class="form-control form-control-sm"
+                    placeholder="Reja yozing"
+                    required
+                >
 
-        </div>
-         </form>
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-sm rounded-pill text-nowrap"
+                >
+                    Yangi Reja Qo`shish
+                </button>
+
+            </div>
+
+        </form>
+
     </div>
 
+
+    <!-- REJA LIST -->
+
+    <div class="reja-list">
+
+        <ul class="list-unstyled">
+
+            <% items.map(function(item) { %>
+
+                <li class="reja-item">
+
+                    <span class="reja-text">
+                        <%= item.reja %>
+                    </span>
+
+                    <button 
+                        data-id="<%=item.id%>"
+                        class="btn btn-secondary btn-sm me-1"
+                    >
+                        O'zgartirish
+                    </button>
+
+                    <button
+                        data-id="<%=item.id%>"
+                        class="btn btn-danger btn-sm"
+                    >
+                        O'chirish
+                    </button>
+
+                </li>
+
+            <% }) %>
+
+        </ul>
+
+    </div>
+
+
+    <!-- DELETE ALL BUTTON -->
+
     <div class="clear-button">
-        <button class="btn btn-danger btn-sm rounded-pill mt-4">
-            Hamma rejalarni O`chirish
+
+        <button
+            class="btn btn-danger btn-sm rounded-pill mt-3"
+        >
+            Hamma Rejalarni O`chirish
         </button>
+
     </div>
 
 </body>
 </html>
- 
