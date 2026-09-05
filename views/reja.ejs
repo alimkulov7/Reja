@@ -64,6 +64,7 @@
             <div class="bg-light rounded p-2 d-flex gap-2 align-items-center">
 
                 <input
+                    id="create-field"
                     type="text"
                     name="reja"
                     class="form-control form-control-sm"
@@ -89,7 +90,7 @@
 
     <div class="reja-list">
 
-        <ul class="list-unstyled">
+        <ul id="item-list" class="list-unstyled">
 
             <% items.map(function(item) { %>
 
@@ -133,6 +134,7 @@
         </button>
 
     </div>
-
+<script src="/author/browser.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.js" integrity="sha512-6/5zO9B3GKTKl45L4FHRPB/d5PamwD37Gnz+GGa18atcadWWcC+UQjbXKNVkMN+IY6tPrJvN/h3Wn5dZgXEYKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
