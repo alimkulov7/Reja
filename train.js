@@ -1,6 +1,54 @@
+//C-TASK
+
+const moment = require("moment");
+
+class Shop {
+    constructor(non, lagmon, cola) {
+        this.non = non;
+        this.lagmon = lagmon;
+        this.cola = cola;
+    }
+
+    qoldiq() {
+        const vaqt = moment().format("HH:mm");
+
+        console.log(
+            `Hozir ${vaqt}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`
+        );
+    }
+
+    sotish(mahsulot, soni) {
+        this[mahsulot] -= soni;
+
+        console.log(
+            `${soni}ta ${mahsulot} sotildi.`
+        );
+    }
+
+    qabul(mahsulot, soni) {
+        this[mahsulot] += soni;
+
+        console.log(
+            `${soni}ta ${mahsulot} qabul qilindi.`
+        );
+    }
+}
+
+const shop = new Shop(4, 7, 8);
+
+shop.qoldiq();
+
+shop.sotish("non", 2);
+
+shop.qabul("cola", 3);
+
+shop.qoldiq();
+
+
+
 //B-TASK
 
-const list = [
+/* const list = [
     "A7kP92mX4qL8zT",
     "xBnK7pQ4rM6a",
     "RtY8uN2cD7wH3"
@@ -29,7 +77,7 @@ countDigits(0);
 countDigits(1);
 countDigits(2);
 
-
+ */
 //          A-TASK
 
 /*  const list = ["Corolla", "Civic", "Mustang", "Corvette", "Model 3", "3 Series"]; */
