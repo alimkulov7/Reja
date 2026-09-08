@@ -1,4 +1,33 @@
-//C-TASK
+//D-TASK
+
+
+
+ const pattern = /\w/g;
+
+
+
+
+function checkContent(a, b) {
+    const user1 =a.match(pattern).sort();
+    const values1 = Object.values(user1);
+
+    const user2 =b.match(pattern).sort();
+    const values2 = Object.values(user2);
+
+    if (values1.join("") == values2.join("")) {
+        console.log("True");
+    }
+    else{
+        console.log("False");
+    }
+}
+
+checkContent("mit", "imt");
+checkContent("dataset", "setdata")
+
+
+
+/* //C-TASK
 
 const moment = require("moment");
 
@@ -44,7 +73,7 @@ shop.qabul("cola", 3);
 
 shop.qoldiq();
 
-
+ */
 
 //B-TASK
 
