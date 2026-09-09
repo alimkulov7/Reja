@@ -1,10 +1,13 @@
+
+
+
 console.log("browser js ishga tushdi");
 
 function itemTemplate(item) {
     return `
     <li class="reja-item">
 
-        <span class="reja-text">
+        <span class="item-text reja-text">
             ${item.reja}
         </span>
 
@@ -58,7 +61,38 @@ document.addEventListener("click", function(e) {
             });   
         }
     }
-    if(e.target.classList.contains("edit-me")){
-        alert("siz edit buttonni bosdingiz");
-    } 
+   
+    // edit oper
+
+    if (e.target.classList.contains("edit-me")) {
+        let userInput = prompt(
+            "Make your changes",
+             e.target.parentElement.querySelector(".item-text").innerHTML
+        );
+        if(userInput) {
+            axios
+            .post("/edit-item", {
+                id: e.target.getAttribute("data-id"),
+                new_input: userInput,
+            })
+            .then(response => {
+                console.log(response.data);
+                e.target.parentElement
+                .querySelector(".item-text")
+                .innerHTML = userInput;
+
+            })
+            .catch(err => {
+                    console.log("Iltimos qayta harakat qilib ko`ring");
+
+            });
+        }
+    }
+});
+
+document.getElementById("delete-all").addEventListener("click", function(){
+    axios.post("/delete-all", {delete_all: true }).then(response => {
+        alert(response.data.state);
+        document.location.reload();
+    });
 });

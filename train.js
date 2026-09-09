@@ -23,7 +23,7 @@ function checkContent(a, b) {
 }
 
 checkContent("mit", "imt");
-checkContent("dataset", "setdata")
+checkContent("5da4tase6t6", "se456tda6ta")
 
 
 

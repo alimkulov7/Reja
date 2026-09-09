@@ -4,6 +4,8 @@ const app = express();
 const mongodb = require("mongodb");
 const fs = require("fs");
 
+
+
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
     if(err) {
@@ -16,7 +18,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 //MongoDb calling
 
-const db = require("./server").db();
+const db = require("./server");
 
 //1 ENTRY code
 app.use(express.static("public"));
@@ -51,6 +53,25 @@ app.post("/delete-item", (req, res) => {
     );
 });
 
+app.post("/edit-item", (req, res) => {
+    const data = req.body;
+    console.log(data);
+    db.collection("plans").findOneAndUpdate(
+        {_id:  new mongodb.ObjectId(data.id)}, 
+        {$set: {reja: data.new_input}},
+        function(err, data) {
+            res.json({state: "success" });
+    });
+    
+});
+
+app.post("/delete-all", (req, res) => {
+    if (req.body.delete_all) {
+        db.collection("plans").deleteMany(function() {
+            res.json({ state: "hamma rejalar o`chirildi"});
+        });
+    }
+});
 
 app.get("/", function (req,res) {
     console.log("user entered /");
