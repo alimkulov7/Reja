@@ -1,7 +1,31 @@
+//F-TASK
+
+function hasDoubleLetters(str) {
+    for (let letter of str) {
+        if (str.includes(letter + letter)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(hasDoubleLetters("hello"));
+console.log(hasDoubleLetters("car"));   
+
+//E-TASK
+/* let a = "get"
+
+function getReverse(a) {
+    const b = a.split("").reverse().join("");
+    console.log(`Reverse string is: ${b}!`)
+}
+
+getReverse(a);
+ */
 //D-TASK
 
 
-
+/* 
  const pattern = /\w/g;
 
 
@@ -24,7 +48,7 @@ function checkContent(a, b) {
 
 checkContent("mit", "imt");
 checkContent("5da4tase6t6", "se456tda6ta")
-
+ */
 
 
 /* //C-TASK

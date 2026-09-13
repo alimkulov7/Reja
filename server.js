@@ -2,7 +2,7 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 const connectionString =
-    "mongodb+srv://alimkulovakbar8_db_user:GwL0tUP5q3xyGGop@cluster0.nxmdrbe.mongodb.net/Reja";
+    "mongodb+srv://alimkulovakbar8_db_user:Inventor04@cluster0.nxmdrbe.mongodb.net/?appName=Cluster0/Reja";
 
 mongodb.connect(
     connectionString,
@@ -14,6 +14,7 @@ mongodb.connect(
 
         if (err) {
             console.log("ERROR on connection");
+            console.log(err);
         } else {
 
             console.log("MongoDb connection succeed!");
@@ -26,7 +27,7 @@ mongodb.connect(
 
             const server = http.createServer(app);
 
-            let PORT = 3000;
+            const PORT = 3000;
 
             server.listen(PORT, function () {
                 console.log(
