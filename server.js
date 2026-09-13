@@ -1,8 +1,9 @@
+require("dotenv").config();
+
 const http = require("http");
 const mongodb = require("mongodb");
 
-const connectionString =
-    "mongodb+srv://alimkulovakbar8_db_user:Inventor04@cluster0.nxmdrbe.mongodb.net/?appName=Cluster0/Reja";
+const connectionString = process.env.MONGODB_URI;
 
 mongodb.connect(
     connectionString,
