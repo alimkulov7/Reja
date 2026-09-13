@@ -27,7 +27,7 @@ mongodb.connect(
 
             const server = http.createServer(app);
 
-            const PORT = 3000;
+            const PORT = 7004;
 
             server.listen(PORT, function () {
                 console.log(
