@@ -1,4 +1,25 @@
-//F-TASK
+//G-TASK
+
+const list = [45,44,55,101,54,69,87,54,101,48,58];
+
+function getHighestIndex(a) {
+    const max = Math.max(...a);
+    const index1 = a.indexOf(max);
+    console.log(index1)
+}
+
+getHighestIndex(list);
+
+
+
+
+
+
+
+
+
+
+/* //F-TASK
 
 function hasDoubleLetters(str) {
     for (let letter of str) {
@@ -10,7 +31,7 @@ function hasDoubleLetters(str) {
 }
 
 console.log(hasDoubleLetters("hello"));
-console.log(hasDoubleLetters("car"));   
+console.log(hasDoubleLetters("car"));    */
 
 //E-TASK
 /* let a = "get"
