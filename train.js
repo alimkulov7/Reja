@@ -1,6 +1,28 @@
+
+
+
+
+function countVowels(a) {
+    let count = 0;
+    for (const ele  of "euioa") {
+        count += a.split(ele).length - 1;
+    }
+    
+    console.log('vowels: ',count)
+}
+
+countVowels("string")
+countVowels("gastrol")
+countVowels("alligator")
+
+
+
+
+
+
 //G-TASK
 
-const list = [45,44,55,101,54,69,87,54,101,48,58];
+/* const list = [45,44,55,101,54,69,87,54,101,48,58];
 
 function getHighestIndex(a) {
     const max = Math.max(...a);
@@ -12,7 +34,7 @@ getHighestIndex(list);
 
 
 
-
+ */
 
 
 
@@ -127,12 +149,6 @@ shop.qoldiq();
     "xBnK7pQ4rM6a",
     "RtY8uN2cD7wH3"
 ];
-
-
-
-
-
-
 
 function countDigits(index) {
 
